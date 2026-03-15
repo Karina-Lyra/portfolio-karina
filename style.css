@@ -1,14 +1,25 @@
-/* =========================================
-   1. VARIÁVEIS CSS (PALETA DARK TECH)
-   ========================================= */
+    /* 1. Variáveis CSS */
 :root {
-    --cor-primaria: #0b0f19; /* Fundo principal muito escuro */
-    --cor-secundaria: #00d2ff; /* Azul cyan tecnológico (neon) */
-    --cor-fundo-claro: #1a2235; /* Fundo das seções 1 */
-    --cor-fundo-escuro: #131a2a; /* Fundo das seções 2 */
-    --cor-texto: #e2e8f0; /* Texto claro para leitura */
-    --cor-box-1: #232d45; /* Cor da caixa da foto e portfólio */
-    --cor-box-2: #1e273c; /* Cor da caixa do texto e formulário */
+    /* Cores Sólidas */
+    --cor-primaria: #0b0f19;
+    --cor-secundaria: #00d2ff;
+    --cor-fundo-claro: #1a2235;
+    --cor-fundo-escuro: #131a2a;
+    --cor-texto: #e2e8f0;
+    --cor-box-1: #232d45;
+    --cor-box-2: #1e273c;
+
+    /* Gradientes */
+    /* Gradiente Tech (Lógica/ADS) */
+    --gradiente-tech: linear-gradient(135deg, #00d2ff 0%, #3b82f6 100%);
+    
+    /* Gradiente Creative (Teatro/Games) */
+    --gradiente-creative: linear-gradient(135deg, #8b5cf6 0%, #d946ef 100%);
+    
+    /* Gradiente de Superfície (Efeito de Vidro/Luz) */
+    --gradiente-surface: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
+    
+    --borda-neon: 1px solid rgba(0, 210, 255, 0.3);
 }
 
 /* =========================================
@@ -48,10 +59,11 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: rgba(11, 15, 25, 0.95); /* Fundo escuro com leve transparência */
+    background-color: rgba(11, 15, 25, 0.9);
+    backdrop-filter: blur(10px); /* Efeito de vidro no menu */
     padding: 20px 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    border-bottom: 1px solid rgba(0, 210, 255, 0.1);
 }
 
 .menu {
@@ -102,60 +114,50 @@ body {
    ========================================= */
 .sobre-container {
     display: flex;
-    align-items: stretch; /* Faz as duas caixas terem a mesma altura */
+    align-items: stretch;
     justify-content: center;
     gap: 30px;
     max-width: 1100px;
     width: 100%;
 }
 
-/* Caixa 1: A Foto */
 .sobre-imagem {
     flex: 1;
     background-color: var(--cor-box-1);
-    padding: 0; /* Zeramos o padding para a foto encostar nas bordas da caixa */
+    background-image: var(--gradiente-surface);
     border-radius: 15px;
+    border: var(--borda-neon);
+    overflow: hidden;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-top: 4px solid var(--cor-secundaria);
-    overflow: hidden; /* MÁGICA: Corta as pontas da foto para respeitar as bordas arredondadas da caixa */
 }
 
 .sobre-imagem img {
     width: 100%;
-    height: 100%; /* Faz a foto ocupar toda a altura da caixa */
-    object-fit: cover; /* Preenche o espaço sem achatar ou distorcer a sua foto */
-    border-radius: 0; /* Remove o formato redondo antigo */
-    border: none; /* Remove a borda que ficava em volta da foto redonda */
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(20%); /* Toque artístico */
+    transition: 0.5s;
 }
 
-/* Caixa 2: O Texto */
+.sobre-imagem:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+}
+
 .sobre-texto {
     flex: 2;
     background-color: var(--cor-box-2);
+    background-image: var(--gradiente-surface);
     padding: 40px;
     border-radius: 15px;
+    border: var(--borda-neon);
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    text-align: left;
-    border-top: 4px solid var(--cor-secundaria); /* Detalhe tecnológico no topo */
 }
 
 .sobre-texto h1 {
     color: var(--cor-secundaria);
-    margin-bottom: 15px;
-    font-size: 2.5rem;
-}
-
-.sobre-texto p {
-    margin-bottom: 15px;
-    font-size: 1.1rem;
-}
-
-.destaque {
-    font-weight: bold;
-    color: #ffffff;
+    font-size: 2.8rem;
+    margin-bottom: 10px;
 }
 
 /* =========================================
