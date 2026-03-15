@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio - Karina Lyra</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Uso da tag semântica header ensinada na aula -->
+    <header class="cabecalho">
+        <nav>
+            <ul class="menu">
+                <li><a href="#sobre">Sobre mim</a></li>
+                <li><a href="#formacao">Formação</a></li>
+                <li><a href="#portfolio">Portfólio</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Uso da tag semântica main -->
+    <main class="container-principal">
+        
+        <section id="sobre" class="secao">
+            <h1 id="titulo-principal">Olá, eu sou Karina Lyra</h1>
+            <p class="destaque">Estudante de ADS, servidora pública há 20 anos e futura viajante de motorhome.</p>
+            <p>Sou bacharel em Direito, com especialização em gestão pública. Trabalho na Justiça Eleitoral da Bahia. Sou cristã, casada e mãe. Meu sonho é viver num motorhome com meu esposo, trabalhar online e contribuir para o desenvolvimento da minha filha e propagação do evangelho.</p>
+        </section>
+
+        <section id="formacao" class="secao">
+            <h2>Minha Formação</h2>
+            <ul class="lista-formacao">
+                <li>Tecnólogo em Análise e Desenvolvimento de Sistemas (Em andamento)</li>
+                <li>Especialização em Gestão Pública</li>
+                <li>Bacharelado em Direito</li>
+            </ul>
+        </section>
+
+        <section id="portfolio" class="secao">
+            <h2>Meu Portfólio</h2>
+            <p>Projetos desenvolvidos durante a graduação.</p>
+            
+            <!-- Estrutura preparada para o CSS Grid (Aula 4) -->
+            <div class="grid-portfolio">
+                <article class="item-portfolio">
+                    <h3>Projeto 1</h3>
+                    <p>Desenvolvimento de site institucional.</p>
+                </article>
+                <article class="item-portfolio">
+                    <h3>Projeto 2</h3>
+                    <p>Sistema de cadastro em JavaScript.</p>
+                </article>
+                <article class="item-portfolio">
+                    <h3>Projeto 3</h3>
+                    <p>Interface responsiva com CSS Grid.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="contato" class="secao">
+            <h2>Entre em Contato</h2>
+            <p>Preencha o formulário abaixo para conversarmos!</p>
+            
+            <form id="form-contato" action="#" method="POST">
+                <fieldset>
+                    <legend>Dados Pessoais</legend>
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+                    
+                    <label for="senha">Senha (Fictícia):</label>
+                    <input type="password" id="senha" name="senha" placeholder="Senha">
+                </fieldset>
+
+                <fieldset>
+                    <legend>Áreas de Interesse</legend>
+                    <input type="checkbox" id="check-dev" name="interesse[]" value="desenvolvimento" checked>
+                    <label for="check-dev">Desenvolvimento de Sistemas</label><br>
+                    
+                    <input type="checkbox" id="check-motorhome" name="interesse[]" value="motorhome">
+                    <label for="check-motorhome">Viagens e Motorhome</label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Motivo do Contato</legend>
+                    <input type="radio" id="radio-vaga" name="motivo" value="vaga" checked>
+                    <label for="radio-vaga">Oportunidade Remota</label><br>
+                    
+                    <input type="radio" id="radio-networking" name="motivo" value="networking">
+                    <label for="radio-networking">Networking</label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Informações Adicionais</legend>
+                    <label for="conheceu">Como chegou até aqui?</label><br>
+                    <select name="conheceu" id="conheceu">
+                        <option value="linkedin">LinkedIn</option>
+                        <option value="github" selected>GitHub</option>
+                    </select>
+                    <br><br>
+                    <label for="tecnologias">Tecnologias (Segure CTRL):</label><br>
+                    <select name="tecnologias" id="tecnologias" size="3" multiple>
+                        <option value="html">HTML</option>
+                        <option value="css">CSS</option>
+                        <option value="js" selected>JavaScript</option>
+                    </select>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Mensagem</legend>
+                    <textarea id="mensagem" name="opiniao" rows="4" required>Sua mensagem...</textarea>
+                </fieldset>
+
+                <input type="submit" id="btn-enviar" value="Enviar Mensagem">
+            </form>
+        </section>
+    </main>
+
+    <!-- Uso da tag semântica footer -->
+    <footer class="rodape">
+        <p>&copy; 2024 Karina Lyra. Desenvolvido para a disciplina de Fundamentos da Programação Web.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
