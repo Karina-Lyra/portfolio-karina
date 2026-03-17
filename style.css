@@ -197,18 +197,114 @@ body {
     max-width: 1000px;
 }
 
+/* 
+   ESTILOS DOS CARDS DO PORTFÓLIO
+*/
 .item-portfolio {
-    background-color: var(--cor-box-1);
-    padding: 30px;
+    background-color: var(--cor-box-2);
     border: 1px solid #334155;
-    border-radius: 10px;
-    text-align: center;
-    transition: transform 0.3s, border-color 0.3s;
+    border-radius: 15px;
+    overflow: hidden; /* Impede que a foto/vídeo vaze pelas bordas arredondadas */
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
 }
 
 .item-portfolio:hover {
-    transform: translateY(-10px); /* Efeito de flutuar ao passar o mouse */
+    transform: translateY(-10px);
     border-color: var(--cor-secundaria);
+    box-shadow: 0 10px 30px rgba(0, 210, 255, 0.15);
+}
+
+/* Área da Foto/Vídeo */
+.portfolio-midia {
+    width: 100%;
+    height: 200px; /* Altura fixa para todos os cards ficarem iguais */
+    overflow: hidden;
+    border-bottom: 1px solid #334155;
+}
+
+.midia-projeto {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Faz a imagem preencher o espaço sem amassar */
+    transition: transform 0.5s;
+}
+
+.item-portfolio:hover .midia-projeto {
+    transform: scale(1.05); /* Efeito de zoom suave na foto ao passar o mouse */
+}
+
+/* Área do Texto */
+.portfolio-conteudo {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Faz o conteúdo empurrar os botões para o final do card */
+}
+
+.portfolio-conteudo h3 {
+    color: var(--cor-secundaria);
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+}
+
+.portfolio-conteudo p {
+    color: #8892b0;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+/* Etiquetas (Tags) de Tecnologia */
+.tags-tecnologia {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.tags-tecnologia span {
+    background-color: rgba(0, 210, 255, 0.1);
+    color: var(--cor-secundaria);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+/* Botões de Ação */
+.links-projeto {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-projeto {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+    background-color: var(--cor-secundaria);
+    color: #000;
+}
+
+.btn-projeto:hover {
+    background-color: #00b8e6;
+    transform: translateY(-2px);
+}
+
+/* Botão específico para o Figma (roxo/rosa para diferenciar) */
+.figma-btn {
+    background-color: #a259ff;
+    color: white;
+}
+
+.figma-btn:hover {
+    background-color: #8a3ee0;
 }
 
 /* Estilos da seção formação (duas colunas) */
@@ -275,6 +371,61 @@ body {
     display: block; /* Coloca o nome do curso em uma linha separada */
     margin-bottom: 3px;
 }
+
+/* 
+   ESTILOS DO CARROSSEL (PROJETO 2)
+*/
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.carousel-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.carousel-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0; /* Esconde as imagens */
+    transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-item.active {
+    opacity: 1; /* Mostra apenas a imagem ativa */
+    position: relative;
+}
+
+/* Botões do Carrossel */
+.btn-prev, .btn-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(11, 15, 25, 0.7);
+    color: var(--cor-secundaria);
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 10;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.btn-prev:hover, .btn-next:hover {
+    background-color: var(--cor-secundaria);
+    color: #000;
+}
+
+.btn-prev { left: 10px; }
+.btn-next { right: 10px; }
 
 /* 7 . Formulário de contato */
 form {

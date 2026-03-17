@@ -41,7 +41,7 @@
                 
                 <!-- Coluna da Esquerda: A Foto -->
                 <div class="sobre-imagem">
-                    <img src="minha-foto.png" alt="Foto de Karina Lyra">
+                    <img src="assets/minha-foto.png" alt="Foto de Karina Lyra">
                 </div>
 
                 <!-- Coluna da Direita: O Texto -->
@@ -95,22 +95,76 @@
 
         <section id="portfolio" class="secao">
             <h2>Meu Portfólio</h2>
-            <p>Projetos desenvolvidos durante a graduação.</p>
+            <p>Projetos que unem criatividade, lógica e design focado no usuário.</p>
             
-            <!-- Estrutura preparada para o CSS Grid (Aula 4) -->
             <div class="grid-portfolio">
-                <article class="item-portfolio">
-                    <h3>Projeto 1</h3>
-                    <p>Desenvolvimento de site institucional.</p>
-                </article>
-                <article class="item-portfolio">
-                    <h3>Projeto 2</h3>
-                    <p>Sistema de cadastro em JavaScript.</p>
-                </article>
-                <article class="item-portfolio">
-                    <h3>Projeto 3</h3>
-                    <p>Interface responsiva com CSS Grid.</p>
-                </article>
+                
+                <!-- PROJETO 1: JOGO 2D (Versão com GIF) -->
+                <div class="item-portfolio">
+                    <div class="portfolio-midia">                        
+                        <img src="assets/video-submarino.gif" alt="Demonstração do Jogo Submarine Defender" class="midia-projeto">
+                    </div>
+                    <div class="portfolio-conteudo">
+                        <h3>Sub Attack</h3>
+                        <p>Jogo 2D onde o jogador controla um submarino, desvia de obstáculos e atira em monstros marinhos. Foco em lógica de eventos e colisões.</p>
+                        <div class="tags-tecnologia">
+                            <span>JavaScript</span>
+                            <span>HTML Canvas</span>
+                        </div>
+                        <div class="links-projeto">
+                            <a href="https://github.com/Karina-Lyra/SubAttack" target="_blank" class="btn-projeto"><i class="fab fa-github"></i> Código</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROJETO 2: APP DE ESTUDO (Versão Carrossel) -->
+                <div class="item-portfolio">
+                    <div class="portfolio-midia">
+                        <div class="carousel" id="carousel-quiz">
+                            <div class="carousel-container">
+                                <img src="assets/GameSchool.jpg" class="midia-projeto carousel-item active">
+                                <img src="assets/GameSchool2.png" class="midia-projeto carousel-item">
+                                <img src="assets/GameSchool3.png" class="midia-projeto carousel-item">
+                                <img src="assets/GameSchool4.png" class="midia-projeto carousel-item">
+                            </div>
+                            <!-- Botões de Navegação -->
+                            <button class="btn-prev" onclick="moveSlide(-1)">❮</button>
+                            <button class="btn-next" onclick="moveSlide(1)">❯</button>
+                        </div>
+                    </div>
+                    <div class="portfolio-conteudo">
+                        <h3>Game School</h3>
+                        <p>Aplicativo que permite salvar perguntas personalizadas e as transforma em um quiz interativo para estudo dinâmico.</p>
+                        <div class="tags-tecnologia">
+                            <span>JavaScript</span>
+                            <span>Lógica CRUD</span>
+                            <span>UX Design</span>
+                        </div>
+                        <div class="links-projeto">
+                            <a href="https://github.com/Karina-Lyra/GameSchool_v04" target="_blank" class="btn-projeto"><i class="fab fa-github"></i> Código</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROJETO 3: FIGMA -->
+                <div class="item-portfolio">
+                    <div class="portfolio-midia">
+                        <img src="assets/Sistema_Hospitalar.png" alt="Protótipo Rede Hospitalar" class="midia-projeto">
+                    </div>
+                    <div class="portfolio-conteudo">
+                        <h3>Vida Plus Saúde</h3>
+                        <p>Protótipo de alta fidelidade para uma rede hospitalar, focado na jornada do paciente, acessibilidade e agendamento de consultas.</p>
+                        <div class="tags-tecnologia">
+                            <span>Figma</span>
+                            <span>UI/UX Design</span>
+                         </div>
+                        <div class="links-projeto">
+                            <!-- Link de compartilhamento do Figma -->
+                            <a href="https://www.figma.com/proto/S47fmJ9PhVW19upkRV25G6/App-Vida-Sa%C3%BAde?node-id=0-1&t=AJ0qxzh5OGfcVhau-1" target="_blank" class="btn-projeto figma-btn"><i class="fab fa-figma"></i> Testar Protótipo</a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -182,4 +236,21 @@
 
     <script src="script.js"></script>
 </body>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('#carousel-quiz .carousel-item');
+
+        function moveSlide(direction) {
+            // Remove a classe ativa do slide atual
+            slides[currentSlide].classList.remove('active');
+            
+            // Calcula o próximo slide (fazendo o loop)
+            currentSlide = (currentSlide + direction + slides.length) % slides.length;
+            
+            // Adiciona a classe ativa ao novo slide
+            slides[currentSlide].classList.add('active');
+        }
+    </script>
+
 </html>
