@@ -3,9 +3,10 @@
 window.onload = function() {
     
     // 2. Uso do querySelector e manipulação de estilo
-    titulo.style.color = "#086bdd"; 
+    const titulo = document.querySelector('h1');
+    titulo.style.color = "#ffffff"; 
     
-    // 3. Uso do getElementById (Ensinado na Aula 6)
+    // 3. Uso do getElementById
     const formulario = document.getElementById('form-contato');
 
     // 4. Adicionando evento de submit

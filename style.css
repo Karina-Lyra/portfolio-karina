@@ -169,7 +169,7 @@ body {
     text-shadow: 0 0 15px rgba(0, 210, 255, 0.5);
 }
 
-..hero-imagem-decorativa {
+.hero-imagem-decorativa {
     flex: 1;
     opacity: 0.6;
 }
