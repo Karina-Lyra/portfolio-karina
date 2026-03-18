@@ -138,9 +138,7 @@ body {
 #sobre, #portfolio { background-color: var(--cor-fundo-claro); }
 #formacao, #contato { background-color: var(--cor-fundo-escuro); }
 
-/* 
-   5. SEÇÃO DE BOAS-VINDAS (HERO) 
-*/
+/* 5. Seções de Boas-Vindas (Hero) */
 .hero-secao {
     min-height: 60vh;
     display: flex;
@@ -173,8 +171,7 @@ body {
 
 ..hero-imagem-decorativa {
     flex: 1;
-    opacity: 0.6; /* Deixamos um pouco mais visível, já que a cor está correta */
-    /* REMOVEMOS A LINHA: filter: hue-rotate(180deg); */
+    opacity: 0.6;
 }
 
 .hero-imagem-decorativa img {
@@ -184,9 +181,7 @@ body {
     box-shadow: 0 0 20px rgba(0, 210, 255, 0.2); /* Adicionamos um brilho azul suave */
 }
 
-/* 
-   SEÇÃO SOBRE MIM (BOXES UNIDOS) 
-*/
+/* Seção Sobre Mim (Boxes Unidos) */
 .sobre-container-unido {
     display: flex;
     max-width: 1100px;
@@ -240,9 +235,7 @@ body {
     max-width: 1000px;
 }
 
-/* 
-   ESTILOS DOS CARDS DO PORTFÓLIO
-*/
+/* Estilos dos Cards do Portifólio */
 .item-portfolio {
     background-color: var(--cor-box-2);
     border: 1px solid #334155;
@@ -415,9 +408,7 @@ body {
     margin-bottom: 3px;
 }
 
-/* 
-   ESTILOS DO CARROSSEL (PROJETO 2)
-*/
+/* Estilos do Carrossel (Projeto 2) */
 .carousel {
     position: relative;
     width: 100%;
@@ -470,9 +461,7 @@ body {
 .btn-prev { left: 10px; }
 .btn-next { right: 10px; }
 
-/* 
-   7. FORMULÁRIO DE CONTATO (PADRÃO TECH)
-*/
+/* 7. Formulário de Contato (Padrão Tech) */
 form {
     width: 100%;
     max-width: 750px;
@@ -486,7 +475,7 @@ form {
     transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
 }
 
-/* O "Pulinho" Neon igual ao Portfólio */
+/* "Pulinho" Neon igual ao Portfólio */
 form:hover {
     transform: translateY(-10px);
     border-color: var(--cor-secundaria);

@@ -1,10 +1,8 @@
-// 1. Evento window.onload (Ensinado na Aula 5/6)
+// script1. Evento window.onload
 // Garante que o JS só rode depois que a página carregar inteira
 window.onload = function() {
     
-    // 2. Uso do querySelector e manipulação de estilo (Ensinado na Aula 6)
-    // Vamos mudar a cor do seu nome via JavaScript para provar que você sabe manipular o DOM
-    let titulo = document.querySelector("#titulo-principal");
+    // 2. Uso do querySelector e manipulação de estilo
     titulo.style.color = "#086bdd"; 
     
     // 3. Uso do getElementById (Ensinado na Aula 6)
@@ -24,8 +22,8 @@ window.onload = function() {
             return;
         }
 
-        // 5. Manipulação de propriedades do DOM (Ensinado na Aula 6)
-        // Vamos alterar o texto e a cor do botão para mostrar que foi enviado
+        // 5. Manipulação de propriedades do DOM
+        // Altera o texto e a cor do botão para mostrar que foi enviado
         let botao = document.getElementById('btn-enviar');
         botao.value = "Enviado com sucesso!";
         botao.style.backgroundColor = "green";
