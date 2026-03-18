@@ -427,32 +427,48 @@ body {
 .btn-prev { left: 10px; }
 .btn-next { right: 10px; }
 
-/* 7 . Formulário de contato */
+/* 
+   7. FORMULÁRIO DE CONTATO (PADRÃO TECH)
+*/
 form {
     width: 100%;
-    max-width: 700px;
+    max-width: 750px;
     background-color: var(--cor-box-2);
-    padding: 35px;
+    padding: 40px;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    border-top: 4px solid var(--cor-secundaria);
+    
+    /* Padronização com o Portfólio: borda fina e transição */
+    border: 1px solid #334155;
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
 }
 
-fieldset {
-    border: 1px solid #334155;
-    border-radius: 8px;
-    margin-bottom: 25px;
-    padding: 20px;
+/* O "Pulinho" Neon igual ao Portfólio */
+form:hover {
+    transform: translateY(-10px);
+    border-color: var(--cor-secundaria);
+    box-shadow: 0 10px 30px rgba(0, 210, 255, 0.15);
 }
 
-legend {
-    font-weight: bold;
-    color: var(--cor-secundaria);
-    background-color: var(--cor-primaria);
-    padding: 5px 15px;
-    border-radius: 5px;
-    border: 1px solid #334155;
+/* Layout em linha para Email e Tel */
+.contato-linha {
+    display: flex;
+    gap: 20px;
 }
+
+.campo-grupo {
+    flex: 1;
+}
+
+/* Ajuste para o campo de mensagem (textarea) */
+textarea {
+    resize: vertical; /* Permite ao usuário aumentar apenas a altura */
+    min-height: 120px;
+}
+
+/* Remove fieldset e legend antigos do CSS se ainda existirem */
+fieldset { border: none; padding: 0; margin: 0; }
+legend { display: none; }
 
 /* Inputs com visual escuro */
 input[type="text"], input[type="email"], input[type="tel"], select, textarea {
@@ -525,4 +541,9 @@ input[type="submit"]:hover {
     
     .nav-container {
         padding: 10px 0 15px 0;
+    }
+
+        .contato-linha {
+        flex-direction: column;
+        gap: 0; /* O espaçamento já é dado pela margem dos inputs */
     }

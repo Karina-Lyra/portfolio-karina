@@ -25,8 +25,8 @@
         <nav class="nav-container">
             <ul class="menu">
                 <li><a href="#sobre">Sobre Mim</a></li>
-                <li><a href="#portfolio">Portfólio</a></li>
                 <li><a href="#formacao">Formação</a></li>
+                <li><a href="#portfolio">Portfólio</a></li>
                 <li><a href="#contato">Contato</a></li>
             </ul>
         </nav>
@@ -108,8 +108,8 @@
                         <h3>Sub Attack</h3>
                         <p>Jogo 2D onde o jogador controla um submarino, desvia de obstáculos e atira em monstros marinhos. Foco em lógica de eventos e colisões.</p>
                         <div class="tags-tecnologia">
-                            <span>JavaScript</span>
-                            <span>HTML Canvas</span>
+                            <span>Python</span>
+                            <span>Pygame</span>
                         </div>
                         <div class="links-projeto">
                             <a href="https://github.com/Karina-Lyra/SubAttack" target="_blank" class="btn-projeto"><i class="fab fa-github"></i> Código</a>
@@ -136,9 +136,8 @@
                         <h3>Game School</h3>
                         <p>Aplicativo que permite salvar perguntas personalizadas e as transforma em um quiz interativo para estudo dinâmico.</p>
                         <div class="tags-tecnologia">
-                            <span>JavaScript</span>
-                            <span>Lógica CRUD</span>
-                            <span>UX Design</span>
+                            <span>Python</span>
+                            <span>Pygame</span>
                         </div>
                         <div class="links-projeto">
                             <a href="https://github.com/Karina-Lyra/GameSchool_v04" target="_blank" class="btn-projeto"><i class="fab fa-github"></i> Código</a>
@@ -169,74 +168,46 @@
         </section>
 
         <section id="contato" class="secao">
-            <h2>Entre em Contato</h2>
-            <p>Preencha o formulário abaixo para conversarmos!</p>
-            
+            <h2>Contato</h2>
+            <p>Vamos conversar sobre tecnologia, projetos ou novas oportunidades?</p><br>        
+
             <form id="form-contato" action="#" method="POST">
-                <fieldset>
-                    <legend>Dados Pessoais</legend>
-                    <label for="nome">Nome:</label>
-                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
-                    
-                    <label for="email">E-mail:</label>
-                    <input type="email" id="email" name="email" placeholder="Digite seu melhor e-mail" required>
-                    
-                    <label for="whatsapp">WhatsApp / Telefone:</label>
-                    <input type="tel" id="whatsapp" name="whatsapp" placeholder="(XX) 9XXXX-XXXX" required>
-                </fieldset>
+                <!-- Nome -->
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
 
-                <fieldset>
-                    <legend>Áreas de Interesse</legend>
-                    <input type="checkbox" id="check-dev" name="interesse[]" value="desenvolvimento" checked>
-                    <label for="check-dev">Desenvolvimento de Sistemas</label><br>
-                    
-                    <input type="checkbox" id="check-motorhome" name="interesse[]" value="motorhome">
-                    <label for="check-motorhome">Viagens e Motorhome</label>
-                </fieldset>
+                <!-- Linha Dupla: Email e WhatsApp -->
+                <div class="contato-linha">
+                    <div class="campo-grupo">
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                    </div>
+                    <div class="campo-grupo">
+                        <label for="whatsapp">WhatsApp:</label>
+                        <input type="tel" id="whatsapp" name="whatsapp" placeholder="(XX) 9XXXX-XXXX">
+                    </div>
+                </div>
 
-                <fieldset>
-                    <legend>Motivo do Contato</legend>
-                    <input type="radio" id="radio-vaga" name="motivo" value="vaga" checked>
-                    <label for="radio-vaga">Oportunidade Remota</label><br>
-                    
-                    <input type="radio" id="radio-networking" name="motivo" value="networking">
-                    <label for="radio-networking">Networking</label>
-                </fieldset>
+                <!-- Assunto -->
+                <label for="assunto">Assunto:</label>
+                <input type="text" id="assunto" name="assunto" placeholder="Ex: Proposta de projeto remoto">
 
-                <fieldset>
-                    <legend>Informações Adicionais</legend>
-                    <label for="conheceu">Como chegou até aqui?</label><br>
-                    <select name="conheceu" id="conheceu">
-                        <option value="linkedin">LinkedIn</option>
-                        <option value="github" selected>GitHub</option>
-                    </select>
-                    <br><br>
-                    <label for="tecnologias">Tecnologias (Segure CTRL):</label><br>
-                    <select name="tecnologias" id="tecnologias" size="3" multiple>
-                        <option value="html">HTML</option>
-                        <option value="css">CSS</option>
-                        <option value="js" selected>JavaScript</option>
-                    </select>
-                </fieldset>
+                <!-- Mensagem -->
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" rows="5" placeholder="Como posso te ajudar?" required></textarea>
 
-                <fieldset>
-                    <legend>Motivo do Contato</legend>
-                    <textarea id="mensagem" name="opiniao" rows="4" required>Sua mensagem...</textarea>
-                </fieldset>
-
-                <input type="submit" id="btn-enviar" value="Enviar Mensagem">
+                <input type="submit" value="Enviar Mensagem">
             </form>
         </section>
     </main>
 
     <!-- Uso da tag semântica footer -->
     <footer class="rodape">
-        <p>&copy; 2024 Karina Lyra. Desenvolvido para a disciplina de Fundamentos da Programação Web.</p>
+        <p>&copy; 2026 Karina Lyra. RU 4611457. Desenvolvido para a disciplina de Fundamentos da Programação Web.</p>
     </footer>
 
     <script src="script.js"></script>
 </body>
-
     <script>
         let currentSlide = 0;
         const slides = document.querySelectorAll('#carousel-quiz .carousel-item');
@@ -252,5 +223,4 @@
             slides[currentSlide].classList.add('active');
         }
     </script>
-
 </html>
