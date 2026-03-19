@@ -26,7 +26,7 @@ O site foi projetado seguindo princípios de:
 
 ## 🚀 Como Visualizar o Projeto
 O projeto está publicado e pode ser acessado através do link:
-👉 [https://karina-lyra.github.io/portfolio/](https://karina-lyra.github.io/portfolio/) *(Substituir pelo seu link final)*
+👉 [https://karina-lyra.github.io/portfolio-web/]
 
 ## 👤 Autora
 **Karina Lyra**
